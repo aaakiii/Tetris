@@ -4,6 +4,11 @@ var ctx = canvas.getContext('2d');
 var X = 300, H = 600;
 var BLOCK_W = W / COLS, BLOCK_H = H / ROWS;
 
+function drawBlock(x, y){
+	ctx.fillRect(BLOCK_W * x, BLOCK_H * y, BLOCK_W -1, BLOCK_H - 1);
+	ctx.strokeRect(BLOCK_W * x, BLOCK_H * y, BLOCK_W - 1, BLOCK_H -1);
+}
+
 function render() {
 	ctx.clearRect(0, 0, W, H);
 	ctx.strokeStyle = 'black';
@@ -29,7 +34,3 @@ function render() {
 
 setInterval(render, 30);
 
-function drawBlock(x, y){
-	ctx.fillRect(BLOCK_W * x, BLOCK_H * y, BLOCK_W -1, BLOCK_H - 1);
-	ctx.strokeRect(BLOCK_W * x, BLOCK_H * y, BLOCK_W - 1, BLOCK_H -1);
-}
